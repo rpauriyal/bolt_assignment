@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { SideBarWrapper, Title } from "./style";
 import { Buttons, SearchPopover } from "../index";
 import { RESPONSE } from "../../constants/response";
+import Popover from "@material-ui/core/Popover";
 
 interface sideBarProps {
   getVehicleDetails?: any;
@@ -11,29 +12,37 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [sideBarOption, setSideBarOption] = useState<any[]>([]);
   const [details, setDetails] = useState<any[]>([]);
+  // const [deleteValue, setDeleteValue] = useState<any[]>([]);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const buttonClicked = () => {
+  const buttonClicked = (e) => {
     if (isButtonClicked) {
       return;
     } else {
+      setAnchorEl(e.currentTarget);
       setIsButtonClicked(true);
     }
   };
 
+  const handleClose = () => {
+    setIsButtonClicked(false);
+    setAnchorEl(null);
+  };
+
   const onSelectValue = (event) => {
     if (event && isButtonClicked) {
-      getVehicleDetails(event);
       event.map((option, indx) => {
         setDetails([...details, option]);
+        getVehicleDetails([option]);
         setSideBarOption([...sideBarOption, option.vehicle_name]);
       });
       setIsButtonClicked(false);
     }
   };
 
-  const detailsHandler = (e) => {
+  const detailsHandler = (e, option: any) => {
     details.map((value, idx) => {
-      if (e === value?.vehicle_name) {
+      if (option === value?.vehicle_name) {
         getVehicleDetails([value]);
       } else {
         return;
@@ -41,15 +50,19 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
     });
   };
 
-  // const onCrossClicked = (e) => {
-  //   console.log("..? remocve");
-  //   var array = [...sideBarOption];
-  //   var index = array.indexOf(e);
-  //   if (index !== -1) {
-  //     array.splice(index, 1);
-  //     setSelectedValue([array]);
-  //   }
-  // };
+  const onCrossClicked = (e, option: any) => {
+    e.stopPropagation();
+    var array = [...sideBarOption];
+    var index = array.indexOf(option);
+    if (index !== -1) {
+      array.splice(index, 1);
+      setSideBarOption([array]);
+    }
+    getVehicleDetails(details.filter((item) => item.vehicle_name !== option));
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
 
   return (
     <SideBarWrapper>
@@ -57,22 +70,38 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
       <Buttons
         buttonText="Add vehicle"
         buttonType="ADD"
-        buttonClicked={buttonClicked}
+        buttonClicked={(e) => buttonClicked(e)}
       />
+
       {isButtonClicked && (
-        <SearchPopover list={RESPONSE} onSelect={onSelectValue} />
+        <Popover
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+        >
+          <SearchPopover list={RESPONSE} onSelect={onSelectValue} />
+        </Popover>
       )}
-      {sideBarOption.map((option, indx) => (
-        <div onClick={(e) => detailsHandler(option)}>
-          <Buttons
-            key={indx}
-            buttonText={option}
-            buttonType="CROSS"
-            // detailsHandler={detailsHandler}
-            // onCrossClicked={onCrossClicked}
-          />
-        </div>
-      ))}
+      {sideBarOption.length > 0
+        ? sideBarOption.map((option, indx) => (
+            <Buttons
+              key={indx}
+              buttonText={option}
+              buttonType="CROSS"
+              buttonClicked={(e) => detailsHandler(e, option)}
+              onCrossClicked={(e) => onCrossClicked(e, option)}
+            />
+          ))
+        : ""}
     </SideBarWrapper>
   );
 };

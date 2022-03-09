@@ -29,12 +29,14 @@ export const Buttons: React.FC<buttonProps> = ({
         {buttonText}
       </div>
       {buttonType === "CROSS" && (
-        <img
-          src={cross}
-          alt="#"
-          className="cross_icon"
-          onClick={onCrossClicked}
-        />
+        <div onClick={onCrossClicked}>
+          <img
+            src={cross}
+            alt="#"
+            className="cross_icon"
+            // onClick={onCrossClicked}
+          />
+        </div>
       )}
     </ButtonWrapper>
   );

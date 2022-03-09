@@ -6,9 +6,14 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 interface popoverProps {
   list?: any;
   onSelect?: any;
+  deleteValue?: any;
 }
 
-export const SearchPopover: React.FC<popoverProps> = ({ list, onSelect }) => {
+export const SearchPopover: React.FC<popoverProps> = ({
+  list,
+  onSelect,
+  deleteValue,
+}) => {
   const [selectedValue, setSelectedValue] = useState<any[]>([]);
 
   useEffect(() => {
@@ -24,6 +29,9 @@ export const SearchPopover: React.FC<popoverProps> = ({ list, onSelect }) => {
         options={list}
         filterSelectedOptions
         getOptionLabel={(option) => option.vehicle_name}
+        getOptionSelected={(option, value) =>
+          option.vehicle_name === value.vehicle_name
+        }
         value={selectedValue}
         onChange={(e, newValue) => setSelectedValue(newValue)}
         renderTags={() => null}

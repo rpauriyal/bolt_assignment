@@ -14,11 +14,8 @@ interface statusProps {
 }
 
 export const VehicleStatus: React.FC<statusProps> = ({ vehicleStatus }) => {
-  const { vehicle_trip_detail } = vehicleStatus;
-  let array;
   let vehicle_stat;
   vehicleStatus.map((option, indx) => {
-    array = option.vehicle_trip_detail;
     vehicle_stat = option.vehicle_status;
   });
   return (
