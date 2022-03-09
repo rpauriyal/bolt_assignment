@@ -17,6 +17,8 @@ export const Dashboard = () => {
         setTripDetails(value.vehicle_trip_detail);
         setSelectedVehicle(value.vehicle_name);
       });
+    } else {
+      setSelectedVehicle("");
     }
   };
 

@@ -41,13 +41,13 @@ export default function DenseTable(props) {
                 <TableCell component="th" scope="row">
                   {moment.unix(row.strt_time).format("MMMM Do YYYY, h:mm:ss a")}
                 </TableCell>
-                <TableCell align="right">{row.duration}</TableCell>
-                <TableCell align="right">{row.mx_speed}</TableCell>
-                <TableCell align="right">{row.avg_speed}</TableCell>
-                <TableCell align="right">{row.strt_voltage}</TableCell>
-                <TableCell align="right">{row.end_voltage}</TableCell>
-                <TableCell align="right">{row.distance}</TableCell>
-                <TableCell align="right">{row.driver_score}</TableCell>
+                <TableCell>{row.duration}</TableCell>
+                <TableCell>{row.mx_speed}</TableCell>
+                <TableCell>{row.avg_speed}</TableCell>
+                <TableCell>{row.strt_voltage}</TableCell>
+                <TableCell>{row.end_voltage}</TableCell>
+                <TableCell>{row.distance}</TableCell>
+                <TableCell>{row.driver_score}</TableCell>
               </TableRow>
             ))}
           </TableBody>
