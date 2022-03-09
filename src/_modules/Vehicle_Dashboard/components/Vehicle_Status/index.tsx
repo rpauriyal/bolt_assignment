@@ -1,5 +1,11 @@
 import React from "react";
-import { StatusWrapper, InfoWrapper, AdditionaInfo, Title } from "./style";
+import {
+  StatusWrapper,
+  InfoWrapper,
+  AdditionaInfo,
+  Title,
+  Wrapper,
+} from "./style";
 import gray_tick from "../../../../_assets/svg/gray_tick.svg";
 import green_tick from "../../../../_assets/svg/green_tick.svg";
 
@@ -16,7 +22,7 @@ export const VehicleStatus: React.FC<statusProps> = ({ vehicleStatus }) => {
     vehicle_stat = option.vehicle_status;
   });
   return (
-    <>
+    <Wrapper>
       <Title>Vehicle Status</Title>
       <StatusWrapper>
         <InfoWrapper>
@@ -75,6 +81,6 @@ export const VehicleStatus: React.FC<statusProps> = ({ vehicleStatus }) => {
           </p>
         </AdditionaInfo>
       </StatusWrapper>
-    </>
+    </Wrapper>
   );
 };

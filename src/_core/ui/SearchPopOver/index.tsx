@@ -18,7 +18,7 @@ export const SearchPopover: React.FC<popoverProps> = ({ list, onSelect }) => {
   }, [selectedValue]);
 
   return (
-    <div style={{ width: "auto" }}>
+    <div style={{ width: "258px" }}>
       <Autocomplete
         multiple
         options={list}

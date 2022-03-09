@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  margin: 35px 0px;
+`;
+
 export const StatusWrapper = styled.div`
   padding: 29px;
   width: 418px;
@@ -30,4 +34,5 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 10px;
 `;
