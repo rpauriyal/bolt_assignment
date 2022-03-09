@@ -6,7 +6,8 @@ export const SideBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 30px 62px 30px 62px;
+  overflow: scroll;
 `;
 
 export const Title = styled.div`

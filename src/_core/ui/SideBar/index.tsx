@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SideBarWrapper, Title } from "./style";
 import { Buttons, SearchPopover } from "../index";
 import { RESPONSE } from "../../constants/response";
 import Popover from "@material-ui/core/Popover";
+import Playground from "../../../_modules/Vehicle_Dashboard/test";
 
 interface sideBarProps {
   getVehicleDetails?: any;
@@ -12,8 +13,8 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [sideBarOption, setSideBarOption] = useState<any[]>([]);
   const [details, setDetails] = useState<any[]>([]);
-  // const [deleteValue, setDeleteValue] = useState<any[]>([]);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [vehicleList, setVehicleList] = useState<any[]>([]);
 
   const buttonClicked = (e) => {
     if (isButtonClicked) {
@@ -24,6 +25,10 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
     }
   };
 
+  useEffect(() => {
+    setVehicleList(RESPONSE);
+  }, []);
+
   const handleClose = () => {
     setIsButtonClicked(false);
     setAnchorEl(null);
@@ -32,17 +37,17 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
   const onSelectValue = (event) => {
     if (event && isButtonClicked) {
       event.map((option, indx) => {
+        setVehicleList(() => vehicleList.filter((m) => m !== option));
         setDetails([...details, option]);
         getVehicleDetails([option]);
-        setSideBarOption([...sideBarOption, option.vehicle_name]);
+        setSideBarOption([...sideBarOption, option]);
       });
       setIsButtonClicked(false);
     }
   };
-
   const detailsHandler = (e, option: any) => {
     details.map((value, idx) => {
-      if (option === value?.vehicle_name) {
+      if (option === value) {
         getVehicleDetails([value]);
       } else {
         return;
@@ -52,13 +57,9 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
 
   const onCrossClicked = (e, option: any) => {
     e.stopPropagation();
-    var array = [...sideBarOption];
-    var index = array.indexOf(option);
-    if (index !== -1) {
-      array.splice(index, 1);
-      setSideBarOption([array]);
-    }
-    getVehicleDetails(details.filter((item) => item.vehicle_name !== option));
+    setDetails(details.filter((item) => item !== option));
+    setVehicleList([...vehicleList, option]);
+    getVehicleDetails(details.filter((item) => item !== option));
   };
 
   const open = Boolean(anchorEl);
@@ -88,20 +89,19 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
             horizontal: "center",
           }}
         >
-          <SearchPopover list={RESPONSE} onSelect={onSelectValue} />
+          <SearchPopover list={vehicleList} onSelect={onSelectValue} />
         </Popover>
       )}
-      {sideBarOption.length > 0
-        ? sideBarOption.map((option, indx) => (
-            <Buttons
-              key={indx}
-              buttonText={option}
-              buttonType="CROSS"
-              buttonClicked={(e) => detailsHandler(e, option)}
-              onCrossClicked={(e) => onCrossClicked(e, option)}
-            />
-          ))
-        : ""}
+      {details &&
+        details.map((option, indx) => (
+          <Buttons
+            key={indx}
+            buttonText={option.vehicle_name}
+            buttonType="CROSS"
+            buttonClicked={(e) => detailsHandler(e, option)}
+            onCrossClicked={(e) => onCrossClicked(e, option)}
+          />
+        ))}
     </SideBarWrapper>
   );
 };

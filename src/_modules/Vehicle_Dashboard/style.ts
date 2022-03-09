@@ -14,4 +14,5 @@ export const MainDashboard = styled.div`
   width: 100%;
   background: #ffffff;
   box-shadow: -4px 0px 10px #e0e0e0;
+  overflow-y: scroll;
 `;
