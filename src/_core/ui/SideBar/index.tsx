@@ -3,7 +3,6 @@ import { SideBarWrapper, Title } from "./style";
 import { Buttons, SearchPopover } from "../index";
 import { RESPONSE } from "../../constants/response";
 import Popover from "@material-ui/core/Popover";
-import Playground from "../../../_modules/Vehicle_Dashboard/test";
 
 interface sideBarProps {
   getVehicleDetails?: any;
