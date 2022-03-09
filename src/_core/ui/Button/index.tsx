@@ -1,6 +1,5 @@
 import React from "react";
-import { ButtonWrapper } from "./style.ts";
-import { svg } from "../../../_assets/index.ts";
+import { ButtonWrapper } from "./style";
 import add from "../../../_assets/svg/add.svg";
 import cross from "../../../_assets/svg/cross.svg";
 

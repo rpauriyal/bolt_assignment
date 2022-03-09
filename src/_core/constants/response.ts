@@ -24,6 +24,16 @@ export const RESPONSE = [
         distance: "5.4 km",
         driver_score: "98.5",
       },
+      {
+        strt_time: "1653544305",
+        duration: "35 min",
+        mx_speed: "90 kmph",
+        avg_speed: "50 kmph",
+        strt_voltage: "70.04v",
+        end_voltage: "69.4v",
+        distance: "7 km",
+        driver_score: "98.5",
+      },
     ],
   },
   {

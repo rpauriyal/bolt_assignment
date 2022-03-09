@@ -1,5 +1,5 @@
 import React from "react";
-import { Dashboard } from "../_modules/Vehicle_Dashboard/index.tsx";
+import { Dashboard } from "../_modules/Vehicle_Dashboard/index";
 
 const App = () => {
   return (

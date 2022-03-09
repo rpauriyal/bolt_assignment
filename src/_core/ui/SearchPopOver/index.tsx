@@ -4,12 +4,12 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
 interface popoverProps {
-  list?: [];
+  list?: any;
   onSelect?: any;
 }
 
-const SearchPopover: React.FC<popoverProps> = ({ list, onSelect }) => {
-  const [selectedValue, setSelectedValue] = useState([]);
+export const SearchPopover: React.FC<popoverProps> = ({ list, onSelect }) => {
+  const [selectedValue, setSelectedValue] = useState<any[]>([]);
 
   useEffect(() => {
     if (selectedValue.length > 0) {
@@ -39,5 +39,3 @@ const SearchPopover: React.FC<popoverProps> = ({ list, onSelect }) => {
     </div>
   );
 };
-
-export default SearchPopover;

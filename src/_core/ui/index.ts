@@ -1,5 +1,5 @@
-import { Buttons } from "./Button/index.tsx";
-import { SideBar } from "./SideBar/index.tsx";
-// import { SearchPopover } from "./SearchPopOver/index.tsx";
+import { Buttons } from "./Button/index";
+import { SideBar } from "./SideBar/index";
+import { SearchPopover } from "./SearchPopOver/index";
 
-export { Buttons, SideBar };
+export { Buttons, SideBar, SearchPopover };

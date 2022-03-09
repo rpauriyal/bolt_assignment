@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { SideBarWrapper, Title } from "./style.ts";
-import { Buttons } from "../index.ts";
-import SearchPopover from "../SearchPopOver/index.tsx";
-import { RESPONSE } from "../../constants/response.ts";
+import { SideBarWrapper, Title } from "./style";
+import { Buttons, SearchPopover } from "../index";
+import { RESPONSE } from "../../constants/response";
+
 interface sideBarProps {
   getVehicleDetails?: any;
 }
 
 export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
-  const [sideBarOption, setSideBarOption] = useState([]);
-  const [details, setDetails] = useState([]);
+  const [sideBarOption, setSideBarOption] = useState<any[]>([]);
+  const [details, setDetails] = useState<any[]>([]);
 
   const buttonClicked = () => {
     if (isButtonClicked) {
@@ -33,7 +33,7 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
 
   const detailsHandler = (e) => {
     details.map((value, idx) => {
-      if (e === value.vehicle_name) {
+      if (e === value?.vehicle_name) {
         getVehicleDetails([value]);
       } else {
         return;

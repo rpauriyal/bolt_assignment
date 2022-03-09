@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusWrapper, InfoWrapper, AdditionaInfo, Title } from "./style.ts";
+import { StatusWrapper, InfoWrapper, AdditionaInfo, Title } from "./style";
 import gray_tick from "../../../../_assets/svg/gray_tick.svg";
 import green_tick from "../../../../_assets/svg/green_tick.svg";
 
