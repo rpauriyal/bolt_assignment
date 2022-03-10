@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/bolt_assignment/static/css/main.659fcac0.css",
-    "main.js": "/bolt_assignment/static/js/main.34b5267a.js",
+    "main.css": "/bolt_assignment/static/css/main.bbb86b01.css",
+    "main.js": "/bolt_assignment/static/js/main.1842e3ed.js",
+    "static/media/Inter-Regular.ttf": "/bolt_assignment/static/media/Inter-Regular.2391725004ae05a27e8e.ttf",
     "static/media/cross.svg": "/bolt_assignment/static/media/cross.1373aff359513f3bc2cc6c27460cf13f.svg",
     "static/media/search.svg": "/bolt_assignment/static/media/search.2aa2d1ba30d58833956f0e126955e8a5.svg",
     "index.html": "/bolt_assignment/index.html",
     "static/media/gray_tick.svg": "/bolt_assignment/static/media/gray_tick.9d3d88f1d81cebe1c51c37f70325ab51.svg",
     "static/media/green_tick.svg": "/bolt_assignment/static/media/green_tick.682875da7bbdee0cafd3ffd3a35edd7d.svg",
     "static/media/add.svg": "/bolt_assignment/static/media/add.ad3486e8cc3d33da053574761625f6a9.svg",
-    "main.659fcac0.css.map": "/bolt_assignment/static/css/main.659fcac0.css.map",
-    "main.34b5267a.js.map": "/bolt_assignment/static/js/main.34b5267a.js.map"
+    "main.bbb86b01.css.map": "/bolt_assignment/static/css/main.bbb86b01.css.map",
+    "main.1842e3ed.js.map": "/bolt_assignment/static/js/main.1842e3ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.659fcac0.css",
-    "static/js/main.34b5267a.js"
+    "static/css/main.bbb86b01.css",
+    "static/js/main.1842e3ed.js"
   ]
 }
