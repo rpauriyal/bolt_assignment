@@ -15,6 +15,7 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [vehicleList, setVehicleList] = useState<any[]>([]);
 
+  // on add new vehicle
   const buttonClicked = (e) => {
     if (isButtonClicked) {
       return;
@@ -33,6 +34,7 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
     setAnchorEl(null);
   };
 
+  // on selected value from the search bar
   const onSelectValue = (event) => {
     if (event && isButtonClicked) {
       event.map((option, indx) => {
@@ -44,6 +46,8 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
       setIsButtonClicked(false);
     }
   };
+
+  // on get the details for the vehicle
   const detailsHandler = (e, option: any) => {
     details.map((value, idx) => {
       if (option === value) {
@@ -54,6 +58,7 @@ export const SideBar: React.FC<sideBarProps> = ({ getVehicleDetails }) => {
     });
   };
 
+  // on delete the selected vehicle
   const onCrossClicked = (e, option: any) => {
     e.stopPropagation();
     setDetails(details.filter((item) => item !== option));
