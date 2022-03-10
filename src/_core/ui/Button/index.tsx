@@ -8,6 +8,9 @@ interface buttonProps {
   buttonType?: string;
   buttonClicked?: any;
   onCrossClicked?: any;
+  width?: string;
+  height?: string;
+  padding?: string;
 }
 
 export const Buttons: React.FC<buttonProps> = ({
@@ -15,6 +18,9 @@ export const Buttons: React.FC<buttonProps> = ({
   buttonType,
   buttonClicked,
   onCrossClicked,
+  width,
+  height,
+  padding,
 }) => {
   return (
     <ButtonWrapper
@@ -22,6 +28,9 @@ export const Buttons: React.FC<buttonProps> = ({
       style={{
         background: buttonType === "CROSS" ? "#ffffff" : "",
         justifyContent: buttonType === "CROSS" ? "space-around" : "",
+        width: width,
+        padding: padding,
+        height: height,
       }}
     >
       {buttonType === "ADD" && <img src={add} alt="#" className="add_icon" />}

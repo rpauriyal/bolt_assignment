@@ -12,7 +12,46 @@ export const RESPONSE = [
       overLoad: true,
       overCurrent: true,
     },
-    vehicle_statistics: {},
+    vehicle_statistics: [
+      { name: "text", booking: "20" },
+      { name: "text", booking: "60" },
+      {
+        name: "text",
+        booking: "25",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+      {
+        name: "text",
+        booking: "80",
+      },
+      {
+        name: "text",
+        booking: "65",
+      },
+      {
+        name: "text",
+        booking: "100",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+      {
+        name: "text",
+        booking: "50",
+      },
+      {
+        name: "text",
+        booking: "45",
+      },
+      {
+        name: "text",
+        booking: "32",
+      },
+    ],
     vehicle_trip_detail: [
       {
         strt_time: "1653542305",
@@ -49,7 +88,46 @@ export const RESPONSE = [
       overLoad: true,
       overCurrent: true,
     },
-    vehicle_statistics: {},
+    vehicle_statistics: [
+      { name: "text", booking: "40" },
+      { name: "text", booking: "70" },
+      {
+        name: "text",
+        booking: "35",
+      },
+      {
+        name: "text",
+        booking: "80",
+      },
+      {
+        name: "text",
+        booking: "70",
+      },
+      {
+        name: "text",
+        booking: "35",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+      {
+        name: "text",
+        booking: "42",
+      },
+      {
+        name: "text",
+        booking: "71",
+      },
+      {
+        name: "text",
+        booking: "24",
+      },
+      {
+        name: "text",
+        booking: "100",
+      },
+    ],
     vehicle_trip_detail: [
       {
         strt_time: "1653542306",
@@ -76,7 +154,46 @@ export const RESPONSE = [
       overLoad: true,
       overCurrent: true,
     },
-    vehicle_statistics: {},
+    vehicle_statistics: [
+      { name: "text", booking: "20" },
+      { name: "text", booking: "60" },
+      {
+        name: "text",
+        booking: "25",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+      {
+        name: "text",
+        booking: "80",
+      },
+      {
+        name: "text",
+        booking: "65",
+      },
+      {
+        name: "text",
+        booking: "100",
+      },
+      {
+        name: "text",
+        booking: "60",
+      },
+      {
+        name: "text",
+        booking: "30",
+      },
+      {
+        name: "text",
+        booking: "100",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+    ],
     vehicle_trip_detail: [
       {
         strt_time: "1653542307",
@@ -103,7 +220,46 @@ export const RESPONSE = [
       overLoad: true,
       overCurrent: true,
     },
-    vehicle_statistics: {},
+    vehicle_statistics: [
+      { name: "text", booking: "20" },
+      { name: "text", booking: "60" },
+      {
+        name: "text",
+        booking: "25",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+      {
+        name: "text",
+        booking: "80",
+      },
+      {
+        name: "text",
+        booking: "65",
+      },
+      {
+        name: "text",
+        booking: "100",
+      },
+      {
+        name: "text",
+        booking: "90",
+      },
+      {
+        name: "text",
+        booking: "80",
+      },
+      {
+        name: "text",
+        booking: "40",
+      },
+      {
+        name: "text",
+        booking: "10",
+      },
+    ],
     vehicle_trip_detail: [
       {
         strt_time: "1653542308",

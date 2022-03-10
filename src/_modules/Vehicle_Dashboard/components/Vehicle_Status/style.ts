@@ -18,6 +18,7 @@ export const StatusWrapper = styled.div`
   justify-content: space-between;
 `;
 export const InfoWrapper = styled.div`
+  width: 50%;
   p {
     font-family: Inter;
     font-style: normal;
@@ -25,10 +26,23 @@ export const InfoWrapper = styled.div`
     font-size: 14px;
     color: #000000;
     margin-bottom: 35px;
+    width: 66%;
+    display: flex;
+    justify-content: space-between;
+    span {
+    }
   }
 `;
 
-export const AdditionaInfo = styled.div``;
+export const AdditionaInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  p {
+    font-size: 14px;
+  }
+`;
 
 export const Title = styled.div`
   font-style: normal;

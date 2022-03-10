@@ -23,17 +23,25 @@ export const VehicleStatus: React.FC<statusProps> = ({ vehicleStatus }) => {
       <Title>Vehicle Status</Title>
       <StatusWrapper>
         <InfoWrapper>
-          <p>Elevation {vehicle_stat?.elevation}</p>
-          <p>Temprature {vehicle_stat?.temprature}</p>
+          <p>
+            Elevation <span>{vehicle_stat?.elevation}</span>
+          </p>
+          <p>
+            Temprature <span>{vehicle_stat?.temprature}</span>
+          </p>
           <p>
             Locked{" "}
-            {!vehicle_stat?.locked ? (
-              <img src={gray_tick} alt="#" />
-            ) : (
-              <img src={green_tick} alt="#" />
-            )}
+            <span>
+              {!vehicle_stat?.locked ? (
+                <img src={gray_tick} alt="#" />
+              ) : (
+                <img src={green_tick} alt="#" />
+              )}
+            </span>
           </p>
-          <p>Battery {vehicle_stat?.battery}</p>
+          <p>
+            Battery <span>{vehicle_stat?.battery}</span>
+          </p>
         </InfoWrapper>
         <AdditionaInfo>
           <p>

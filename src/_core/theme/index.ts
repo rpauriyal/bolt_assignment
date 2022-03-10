@@ -66,13 +66,7 @@ export const defaultTheme: DefaultTheme = {
     },
   },
   typography: {
-    fontFamily: [
-      "Nunito-regular",
-      "Nunito-italic",
-      "Nunito-semiBold",
-      "Nunito-light",
-      "Nunito-bold",
-    ],
+    fontFamily: [],
     fontStyle: ["normal", "italic"],
     fontWeight: ["300", "400", "500", "600", "700"],
     fontSize: {
